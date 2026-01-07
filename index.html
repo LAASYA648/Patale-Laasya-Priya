@@ -131,6 +131,11 @@
             object-fit: cover;
             border: 8px solid white;
             box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .profile-img:hover {
+            transform: scale(1.03);
         }
 
         h1 {
@@ -524,6 +529,11 @@
             .timeline-item:nth-child(even)::after {
                 left: 21px;
             }
+            
+            .profile-img {
+                width: 250px;
+                height: 250px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -562,6 +572,11 @@
             .projects-grid,
             .cert-achievements {
                 grid-template-columns: 1fr;
+            }
+            
+            .profile-img {
+                width: 220px;
+                height: 220px;
             }
         }
     </style>
@@ -613,17 +628,18 @@
                     </div>
                     
                     <div class="social-links">
-                        <https://github.com/LAASYA648/Patale-Laasya-Priya/blob/main/photo.jpg"https://github.com/LAASYA648" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://github.com/LAASYA648" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/laasya2004" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                         <a href="mailto:patalelaasyapriya@gmail.com"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 
                 <div class="hero-image">
-                    <div class="profile-img" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); display: flex; align-items: center; justify-content: center; color: white; font-size: 5rem;">
-                    <"https://github.com/LAASYA648/Patale-Laasya-Priya/blob/main/photo.jpghttps://github.com/LAASYA648/Patale-Laasya-Priya/blob/main/photo.jpghttps://github.com/LAASYA648/Patale-Laasya-Priya/blob/main/photo.jpg">
-                        <i class="fas fa-user"></i>
-                    </div>
+                    <!-- Your GitHub profile photo -->
+                    <img src="https://raw.githubusercontent.com/LAASYA648/Patale-Laasya-Priya/main/photo.jpg" 
+                         alt="Patale Laasya Priya" 
+                         class="profile-img"
+                         onerror="this.src='https://via.placeholder.com/300x300/2563eb/ffffff?text=Laasya+Priya'">
                 </div>
             </div>
         </div>
