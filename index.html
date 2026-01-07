@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laasya Priya | Cloud & DevOps Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
+            --gray-color: #64748b;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--dark-color);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0 80px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid white;
+            box-shadow: var(--box-shadow);
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            color: var(--gray-color);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray-color);
+        }
+
+        .contact-item i {
+            color: var(--primary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: white;
+            border-radius: 50%;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .skill-list li::before {
+            content: '▸';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Education & Projects */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background-color: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content .date {
+            color: var(--gray-color);
+            font-weight: 500;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--primary-color);
+            border-radius: 50%;
+            top: 20px;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -12px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -12px;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-header {
+            padding: 25px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .project-header h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .project-body {
+            padding: 25px;
+        }
+
+        .tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+
+        .tool-tag {
+            background-color: #e0f2fe;
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Certifications & Achievements */
+        .cert-achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .achievement-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .achievement-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Declaration & Footer */
+        .declaration {
+            background-color: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .copyright {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-info {
+                justify-content: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .timeline-item:nth-child(odd)::after,
+            .timeline-item:nth-child(even)::after {
+                left: 21px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .projects-grid,
+            .cert-achievements {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Laasya Priya</a>
+                <button class="mobile-menu-btn" id="menuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Patale Laasya Priya</h1>
+                    <p class="tagline">Cloud & DevOps Engineer</p>
+                    <p class="description">Recent ECE graduate from BVRIT aspiring to build a career in Cloud and DevOps engineering. I have a strong foundation in AWS services, automation, and infrastructure deployment with skills in Terraform, Docker, Kubernetes, Jenkins, and Ansible.</p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>patalelaasyapriya@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 8919673608</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <a href="#contact" class="btn">Get In Touch</a>
+                        <a href="PATALE LAASYA PRIYA.pdf" class="btn btn-outline" download>Download Resume</a>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://github.com/LAASYA648" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/laasya2004" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:patalelaasyapriya@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <!-- Placeholder for profile image - replace with actual image -->
+                    <div class="profile-img" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); display: flex; align-items: center; justify-content: center; color: white; font-size: 5rem;">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Technical Skills</h2>
+            </div>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-cloud"></i> Cloud Technologies</h3>
+                    <ul class="skill-list">
+                        <li>AWS (EC2, S3, IAM, Lambda, CloudWatch, CloudTrail, RDS, Route 53)</li>
+                        <li>Azure VPN Gateway, VNet</li>
+                        <li>Cloud Networking (AWS VPC/VNet, Subnets, Route Tables)</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Infrastructure as Code</h3>
+                    <ul class="skill-list">
+                        <li>Terraform</li>
+                        <li>AWS CloudFormation</li>
+                        <li>Ansible</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-cogs"></i> CI/CD & Automation</h3>
+                    <ul class="skill-list">
+                        <li>Jenkins</li>
+                        <li>GitHub Actions</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-box"></i> Containerization</h3>
+                    <ul class="skill-list">
+                        <li>Docker</li>
+                        <li>Kubernetes</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-network-wired"></i> Networking</h3>
+                    <ul class="skill-list">
+                        <li>IP Addressing, Subnetting, CIDR</li>
+                        <li>TCP/IP, OSI Model</li>
+                        <li>DNS, HTTP/HTTPS, NAT, Firewalls</li>
+                        <li>Load Balancing, Security Groups, NACLs</li>
+                        <li>VPN Basics</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Other Skills</h3>
+                    <ul class="skill-list">
+                        <li>Git, GitHub</li>
+                        <li>Linux, Windows</li>
+                        <li>Monitoring (CloudWatch, Prometheus basics)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education</h2>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>B.Tech - Electronics & Communication Engineering</h3>
+                        <span class="date">2021 - 2025</span>
+                        <p><strong>BVRIT Hyderabad College of Engineering for Women</strong></p>
+                        <p>CGPA: 7.20</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Intermediate - MPC</h3>
+                        <span class="date">2019 - 2021</span>
+                        <p><strong>Narayana Junior College</strong></p>
+                        <p>CGPA: 83.2%</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>SSC (10th Grade)</h3>
+                        <span class="date">2018 - 2019</span>
+                        <p><strong>SKV High School</strong></p>
+                        <p>CGPA: 92.0%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Projects</h2>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Hybrid Cloud VPN Setup Between Azure and AWS</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Designed and implemented a secure Site-to-Site VPN connection between Microsoft Azure and Amazon Web Services using a Hub-and-Spoke architecture.</p>
+                        <p>Enabled private communication between Azure VM and AWS EC2 over an encrypted IPSec tunnel, ensuring secure multi-cloud connectivity.</p>
+                        
+                        <div class="tools">
+                            <span class="tool-tag">Azure VPN Gateway</span>
+                            <span class="tool-tag">AWS VPC</span>
+                            <span class="tool-tag">Virtual Private Gateway</span>
+                            <span class="tool-tag">Customer Gateway</span>
+                            <span class="tool-tag">Site-to-Site VPN</span>
+                            <span class="tool-tag">EC2</span>
+                            <span class="tool-tag">Azure VNet</span>
+                        </div>
+                        
+                        <h4>Roles & Responsibilities:</h4>
+                        <ul class="skill-list">
+                            <li>Configured Azure Hub VNet, Spoke VNet, VPN Gateway, and Local Network Gateway</li>
+                            <li>Set up AWS VPC, subnets, routing tables, EC2 instance, Customer Gateway, and Virtual Private Gateway</li>
+                            <li>Enabled Hub–Spoke peering with gateway transit for proper routing</li>
+                            <li>Tested and verified private IP communication between Azure VM and AWS EC2 securely</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>AWS 3-Tier Architecture Deployment Using Terraform</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Implemented a secure and scalable 3-tier architecture (Web, App, DB layers) on AWS using Terraform.</p>
+                        <p>Used AWS Secrets Manager for secure storage of database credentials and configured S3 backend for remote Terraform state management.</p>
+                        
+                        <div class="tools">
+                            <span class="tool-tag">Terraform</span>
+                            <span class="tool-tag">EC2</span>
+                            <span class="tool-tag">Amazon RDS (MySQL)</span>
+                            <span class="tool-tag">S3</span>
+                            <span class="tool-tag">IAM</span>
+                            <span class="tool-tag">Security Groups</span>
+                            <span class="tool-tag">VPC</span>
+                            <span class="tool-tag">NAT Gateway</span>
+                        </div>
+                        
+                        <h4>Roles & Responsibilities:</h4>
+                        <ul class="skill-list">
+                            <li>Designed VPC with public and private subnets, routing, NAT Gateway, and Security Groups</li>
+                            <li>Provisioned EC2 instances for web and application tiers using Terraform modules</li>
+                            <li>Created Amazon RDS (MySQL) with secure connectivity from private subnets</li>
+                            <li>Configured S3 bucket for Terraform remote backend to store and manage state files</li>
+                            <li>Performed end-to-end testing of communication between Web → App → DB tiers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certifications & Achievements</h2>
+            </div>
+            
+            <div class="cert-achievements">
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>AWS Cloud Practitioner Essentials</h3>
+                    <p>VCube Software Solutions Pvt. Ltd.</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Qualified GATE 2024 (ECE)</h3>
+                    <p>Graduate Aptitude Test in Engineering</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Research Paper Publication</h3>
+                    <p>"Next-Gen Underwater Communication using Li-Fi" — IEEE, 202X</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Volunteering</h3>
+                    <p>Volunteered in multiple events conducted at BVRIT</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Arts Competitions</h3>
+                    <p>Participated in Arts competitions during B.Tech at BVRIT</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Declaration Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Declaration</h2>
+            </div>
+            
+            <div class="declaration">
+                <p>I hereby declare that the information provided above is true and correct to the best of my knowledge and belief.</p>
+                <br>
+                <p><strong>Patale Laasya Priya</strong></p>
+                <p>Cloud & DevOps Engineer</p>
+                <br>
+                <div class="contact-info" style="justify-content: center;">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>patalelaasyapriya@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 8919673608</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>Patale Laasya Priya</h3>
+                <p>Cloud & DevOps Engineer | AWS Specialist | Infrastructure Automation</p>
+                
+                <div class="social-links">
+                    <a href="https://github.com/LAASYA648" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/laasya2004" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:patalelaasyapriya@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+                
+                <p class="copyright">© 2024 Patale Laasya Priya. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
